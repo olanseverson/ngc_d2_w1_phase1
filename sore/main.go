@@ -56,13 +56,23 @@ func fibonacci() {
 	} else if n == 2 {
 		fmt.Println(a2)
 	} else {
-		var a3 int
-		for i := 2; i < n; i++ {
-			a3 = a2 + a1
-			a1 = a2
-			a2 = a3
-		}
-		fmt.Println(a3)
+		// var a3 int
+		// for i := 2; i < n; i++ {
+		// a3 = a2 + a1
+		// a1 = a2
+		// a2 = a3
+		// }
+		fmt.Println(fibonacciRec(n))
+	}
+}
+
+func fibonacciRec(n int) int {
+	if n == 1 {
+		return 0
+	} else if n == 2 {
+		return 1
+	} else {
+		return fibonacciRec(n-1) + fibonacciRec(n-2)
 	}
 }
 
